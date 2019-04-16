@@ -13,7 +13,10 @@ class Student
 
   public List <Exercise> exercises {get; set;} = new List<Exercise>();
 
-   
+//   public Student(string firstName, string lastName, string slackHandle, Cohort cohort) {
+
+
+//  }
 
 
 

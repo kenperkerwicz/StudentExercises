@@ -6,8 +6,8 @@ namespace StudentExercises {
 class Exercise
 {
   public string language {get; set;}
-  
 
+  public string Name {get; set;}
 }
 
 }

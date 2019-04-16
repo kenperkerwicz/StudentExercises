@@ -3,111 +3,139 @@ using System.Collections.Generic;
 
 namespace StudentExercises
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
 
-            //create 4 or more exercises
+      //create 4 or more exercises
 
-           Exercise firstEx = new Exercise() {
-               language = "JavaScript"
-           };
-            Exercise secondEx = new Exercise() {
-               language = "Python"
-           };
-            Exercise thirdEx = new Exercise() {
-               language = "Ruby"
-           };
-            Exercise fourthEx = new Exercise() {
-               language = "HTML"
-           };
-
-
-
-            //create cohorts//
-
-           Cohort Cohort30 = new Cohort("Cohort 30");
-
-           Cohort Cohort31 = new Cohort("Cohort 31");
-
-           Cohort Cohort32 = new Cohort("Cohort 32");
+      Exercise firstEx = new Exercise()
+      {
+        language = "JavaScript"
+      };
+      Exercise secondEx = new Exercise()
+      {
+        language = "Python"
+      };
+      Exercise thirdEx = new Exercise()
+      {
+        language = "Ruby"
+      };
+      Exercise fourthEx = new Exercise()
+      {
+        language = "HTML"
+      };
 
 
-            //create 4 or more students//
+
+      //create cohorts//
+
+      Cohort Cohort30 = new Cohort("Cohort 30");
+
+      Cohort Cohort31 = new Cohort("Cohort 31");
+
+      Cohort Cohort32 = new Cohort("Cohort 32");
 
 
-           Student Ken = new Student() {
-                firstName = "Ken",
-                lastName = "Perkerwicz",
-                slackHandle = "kenPerkerwicz",
-                cohort = Cohort30,
+      Cohort Cohort33 = new Cohort()
+      {
+        Cohortname = "Cohort 33"
+      };
 
-           };
-
-           Student Chad = new Student() {
-                firstName = "Chad",
-                lastName = "Kroger",
-                slackHandle = "chadKroger",
-                cohort = Cohort31,
-           };
-
-           Student Bob = new Student() {
-                firstName = "Bob",
-                lastName = "Ross",
-                slackHandle = "bobRoss",
-                cohort = Cohort32,
-           };
-
-            Student Jeff = new Student() {
-                firstName = "Jeff",
-                lastName = "Goldblum",
-                slackHandle = "jeffGoldblum",
-                cohort = Cohort30
-           };
-
-// create instructors//
-
-           Instructor Steven = new Instructor() {
-                firstName = "Steven",
-                lastName = "Brownlee",
-                slackHandle = "steveB",
-                instructorCohort = Cohort30,
-
-           };
-
-           Instructor Meg = new Instructor() {
-                firstName = "Meg",
-                lastName = "Ducharme",
-                slackHandle = "MegD",
-               instructorCohort = Cohort31
-           };
-
-           Instructor Biff = new Instructor() {
-                firstName = "Biff",
-                lastName = "Trump",
-                slackHandle = "biffB",
-                instructorCohort = Cohort31
-           };
+      //create 4 or more students//
 
 
-Biff.ExerciseAssignment(Bob, firstEx);
-Biff.ExerciseAssignment(Bob, secondEx);
+      Student Ken = new Student()
+      {
+        firstName = "Ken",
+        lastName = "Perkerwicz",
+        slackHandle = "kenPerkerwicz",
+        cohort = Cohort30,
+
+      };
+
+      Student Chad = new Student()
+      {
+        firstName = "Chad",
+        lastName = "Kroger",
+        slackHandle = "chadKroger",
+        cohort = Cohort31,
+      };
+
+      Student Bob = new Student()
+      {
+        firstName = "Bob",
+        lastName = "Ross",
+        slackHandle = "bobRoss",
+        cohort = Cohort32,
+      };
+
+      Student Jeff = new Student()
+      {
+        firstName = "Jeff",
+        lastName = "Goldblum",
+        slackHandle = "jeffGoldblum",
+        cohort = Cohort30
+      };
+
+      // create instructors//
+
+      Instructor Steven = new Instructor()
+      {
+        firstName = "Steven",
+        lastName = "Brownlee",
+        slackHandle = "steveB",
+        instructorCohort = Cohort30,
+
+      };
+
+      Instructor Meg = new Instructor()
+      {
+        firstName = "Meg",
+        lastName = "Ducharme",
+        slackHandle = "MegD",
+        instructorCohort = Cohort31
+      };
+
+      Instructor Biff = new Instructor()
+      {
+        firstName = "Biff",
+        lastName = "Trump",
+        slackHandle = "biffB",
+        instructorCohort = Cohort31
+      };
 
 
- List<Student> students = new List<Student>();
 
- students.Add(Ken);
- students.Add(Bob);
-
-Cohort30.studentList.Add(Ken);
-Cohort30.studentList.Add(Jeff);
+      Biff.ExerciseAssignment(Bob, firstEx);
+      Biff.ExerciseAssignment(Bob, secondEx);
 
 
-foreach (Student student in Cohort30.studentList) {
- Console.WriteLine($"the students first name is {student.firstName}, and their last name is  {student.lastName}");
-}
+      List<Student> students = new List<Student>();
 
-        }
+      students.Add(Ken);
+      students.Add(Bob);
+
+      Cohort30.studentList.Add(Ken);
+      Cohort30.studentList.Add(Jeff);
+
+
+
+// produces cohort 30
+Console.WriteLine(Jeff.cohort.Cohortname);
+
+// produces cohort 31
+Console.WriteLine(Biff.instructorCohort.Cohortname);
+
+
+
+
+      foreach (Student student in Cohort30.studentList)
+      {
+        Console.WriteLine($"the students first name is {student.firstName}, and their last name is  {student.lastName}");
+      }
+
     }
+  }
 }

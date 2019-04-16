@@ -16,6 +16,11 @@ class Instructor
 
 public void ExerciseAssignment(Student student, Exercise exercise) {
   student.exercises.Add(exercise);
+
+}
+
+public Instructor() {
+
 }
 
 } }
